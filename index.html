@@ -1,0 +1,434 @@
+<html><head>
+  <title>Cewb.io - Platformer survival</title>
+  <meta name="Keywords" content="io game, survival, physics">
+  <meta name="description" content="Explore the world, build your dreamed castle, gather and craft the most powerful items, beat your friends on the ranking. Or at least survive on this wild world.">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="public/css/game.css?">
+
+  <!-- iOS mobile app settings -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+
+  <script type="text/javascript" src="public/js/pixi.js"></script>
+  <script src="public/js/pixi-layers.js"></script>
+  <script src="public/js/pixi-ui.min.js"></script>
+  <script src="public/js/pixi-particles.js"></script>
+
+  <script src="public/js/jquery-1.7.1.min.js"></script>
+  <script src="public/js/tweenjs.js"></script>
+
+  <script src="public/js/schemapack.js"></script>
+  <script src="public/js/ws-binary.js"></script>
+  <script src="public/js/vars.js?"></script>
+  <script src="public/js/shared.js?"></script>
+
+	<script>
+    window.aiptag = window.aiptag || {cmd: []};
+    aiptag.cmd.display = aiptag.cmd.display || [];
+    aiptag.cmd.player = aiptag.cmd.player || [];
+  </script>
+  <script data-ad-client="ca-pub-4508259657552400" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script async src="//api.adinplay.com/libs/aiptag/pub/BLS/cewb.io/tag.min.js"></script>
+  <script src="public/js/game.js?"></script>
+</head>
+
+<body oncontextmenu="return false;"><script>hosts = {"cewb.io:12345" : ["USA",4,"30","USA"],};</script>
+  <div id="hud">
+    <p class="latency"></p>
+  </div>
+
+
+
+  <div id="cookie">
+    <input type="checkbox" id="accept">
+    <span></span><a href="public/privacy.html" target="_blank"> Privacy policy</a><p></p>
+    <div class="btn btn-success"><label for="accept">Accept</label></div>
+  </div>
+
+
+  <div id="cookies">
+    <p>
+  </p></div>
+
+  <div id="ui_html">
+    <div class="buttons">
+      <a class="button alliance_open">
+    Alliance
+  </a>
+    </div>
+
+    <div id="chat" class="">
+      <a href="" class="close">HIDE CHAT</a>
+      <h1>Chat</h1>
+      <div class="list">
+      </div>
+
+      <div class="bottom">
+        <div class="create">
+          <input type="text" placeholder="Chat message" id="chat_text" maxlength="125">
+          <button id="chat_send">Send</button>
+          <div class="volume-menu" style="float:right;margin-top:0">
+            <button class="open-volume-menu fa fa-volume-up"></button>
+          </div>
+    
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div id="alliance_menu" class="modal">
+    <a href="" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+    <h1>Alliances</h1>
+    <div class="list">
+    </div>
+
+
+
+
+
+    <div class="bottom">
+      <div class="create">
+        <input type="text" placeholder="Alliance name" id="ally_name" maxlength="5">
+        <button id="create_ally">Create</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="music_menu" class="modal" style="z-index:99999">
+    <a href="" class="close"><i class="fa fa-times" aria-hidden="true"></i></a>
+    <h1>Sounds</h1>
+    <br>
+    <p style="text-align: center;">Background sfx</p>
+    <div class="volume-control">
+      <button class="music_down fa fa-minus"></button>
+      <p class="music_value"></p>
+      <button class="music_up fa fa-plus"></button>  
+    </div>
+    <br>
+    <br>
+    <p style="text-align: center;">SFX Volume</p>
+    <div class="volume-control">
+      <button class="sfx_down fa fa-minus"></button>
+      <p class="sfx_value"></p>
+      <button class="sfx_up fa fa-plus"></button>  
+    </div>
+  </div>
+
+  <div id="overlay">
+    <div class="sponsor">
+      <a href="https://www.addictinggames.com/" target="_blank"><img src="public/img/addictinggames_logo.png" width="172"></a>
+    </div>
+    <div id="name_choose">
+
+      <h1><!--<img src="http://via.placeholder.com/970x250">-->
+        <div class="top-add">
+          <div id="cewb-io_970x250">
+            <script type="text/javascript">
+              aiptag.cmd.display.push(function() { aipDisplayTag.display('cewb-io_970x250'); });
+            </script>
+          </div>  
+        </div>
+        <br>
+          Cewb.io
+        </h1>
+
+      <form action="#">
+        <div class="skins">
+          <ul>
+            <li data-name="cara6" class="active"><img src="public/img/cara6.svg"></li>
+            <li data-name="cara7"><img src="public/img/cara7.svg"></li>
+
+            <li data-name="cara9"><img src="public/img/cara9.svg"></li>
+            <li data-name="cara10"><img src="public/img/cara10.svg"></li>
+            <li data-name="cara3"><img src="public/img/cara3.svg"></li>
+            <li data-name="cara5"><img src="public/img/cara5.svg"></li>
+            <li data-name="cara8"><img src="public/img/cara8.svg"></li>
+            <li data-name="expression1" class="active"><img src="public/img/Expression1.png"></li>
+            <li data-name="expression2"><img src="public/img/Expression2.png"></li>
+            <li data-name="expression3"><img src="public/img/Expression3.png"></li>
+            <li data-name="expression4"><img src="public/img/Expression4.png"></li>
+            <li data-name="expression5"><img src="public/img/Expression5.png"></li>
+            <li data-name="expression6"><img src="public/img/Expression6.png"></li>
+            <li data-name="expression7"><img src="public/img/Expression7.png"></li>
+            <li data-name="expression8"><img src="public/img/Expression8.png"></li>
+            <li data-name="expression9"><img src="public/img/Expression9.png"></li>
+            <li data-name="expression10"><img src="public/img/Expression10.png"></li>
+
+
+          </ul>
+        </div>
+        <div class="join_form">
+          <div class="join_form_user_name">
+            <input type="text" placeholder="Name" id="user_name">
+          </div>
+          <input type="button" id="join_game" value="Start">
+        </div>
+        <select id="serverlist">
+        <option>Loading...</option>
+      </select>
+      </form>
+      <div class="ads">
+        <div id="ad_p">
+          <!--<img src="http://via.placeholder.com/300x250">-->
+          <div id="cewb-io_300x600">
+            <script type="text/javascript">
+              aiptag.cmd.display.push(function() { aipDisplayTag.display('cewb-io_300x600'); });
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div id="layout_left">
+        <p>Explore the world. Gather and craft powerful items. Defeat your friends and survive.</p>
+        <h3>How to play:</h3>
+        <p>Keys 1 to 9 to select from inventory. Drag and drop items from your inventory to give to other players.<br><br> Click to attack or gather.<br> <br> </p>
+        <!--<div class="changelog">
+          <p><strong>28/10/2019</strong><br /> Fixed position of custom islands. <br /> Fixed automated servers creation. <br /> Removed two faces that could get me in troubles with article 13. </p>
+
+          <p><strong>29/01/2019</strong><br /> Fixed armor bug, now you will loose your old armor when changed. <br /> Taller sky. <br /> New lake location. <br /> Bigger map. <br /> New servers. <br /> Server and client performance. <br /> Better client memory management.
+          </p>
+
+          <p><strong>12/03/2017</strong><br /> Map dissapear fixed.<br /> Fixed not safe website problem
+          </p>
+          <p><strong>12/02/2017</strong><br /> Client side performance improvements<br />
+          </p>
+          <p><strong>10/02/2017</strong><br /> Performance improvements<br /> Faster loading<br />
+          </p>
+
+          <p><strong>27/01/2017</strong><br /> Socket performance improvements and bugfixes<br /> Fixed hand displace<br /> Fixed cannot heal problem<br /> Players with WebGl disabled will not see night and ligths, this is because filters are not supported
+            right now.<br />
+          </p>
+          <p><strong>26/01/2017</strong><br /> Now trees gives you sticks<br /> You can see now life of objects<br /> Major performance optimizations<br />
+          </p>
+          <p><strong>23/01/2017</strong><br /> More inventory slots <br /> Metal rocks give stones <br /> Stones randomly give stones and metal <br /> Changed cost of many items <br /> Less impulse when hit.<br /> Seeds will be rewarded randomly.<br />
+          </p>
+
+          <p><strong>21/01/2017</strong><br /> Speed optimization <br /> Fixed bug on chests <br /> New design for potions (Thx to RelaxHD) <br /> Items showed reversed when hand was looking at right <br />
+          </p>
+          <p><strong>20/01/2017</strong><br /> Fixed problems on firefox<br /> Improved client side performance<br /> Added a message for not fully supported browsers
+          </p>
+          <p><strong>19/01/2017</strong><br /> Performance improvements <br /> More stones on map<br /> Bug fix blank screen when joining <br /> Wood blocks are now stronger
+          </p>
+          <p><strong>18/01/2017</strong><br /> - Added metal pants and metal helmet.<br /> - Added metal block, metal trap, and metal door.<br /> - Added carpenter hammer, so you can deconstruct buildings that are of your own or alliance.<br /> - Added furnace,
+            it can be use to create blocks of some elements cheaper.<br /> - Added quarry, it can be use to gather minerals from floors. Each floor will bring different minerals.<br /> - Added chest, for saving items. Some improvements on drag and drop
+            features should be added.<br /> - Campfires now creates coal.<br /> - Added seeds when a tree dies. You can plant a seed on the ground for grow a tree of the same type.<br /> - Added death of world objects.<br /> - Added mushrooms. Will give
+            you venom.<br /> - Venom sword now is more expensive now.<br /> - Changed some colors and background.<br /> - Bug of dead phantoms should be fixed.<br /> - Tweaked physics and sockets
+          </p>
+          <p><strong>28/12/2017</strong><br /> - Added more skins<br /> - Changelog added on main page<br /> - Tweaked physics system
+          </p>
+          <p><strong>21/12/2017</strong><br /> - Improve gui a little bit and preparing for mobile version<br /> - Added a queue for messages sent over socket, so on overload this don't crash hard the server.
+          </p>
+          <p><strong>16/12/2017</strong><br /> - Better UI<br /> - Improved performance from physics and sockets. <br /> - Changed leaderboard<br /> - Map improvements
+          </p>
+          <p><strong>06/12/2017</strong><br /> - New physics system that should handle really more objects at the same time.<br /> - Added skins, to choose between for.<br /> - Changed water, added some animations, show map when first entrance to game, changed
+            water movement and some movement and speed tweaking.
+          </p>
+          <p><strong>06/12/2017</strong><br /> - New physics system that should handle really more objects at the same time.<br /> - Added skins, to choose between for.<br /> - Changed water, added some animations, show map when first entrance to game, changed
+            water movement and some movement and speed tweaking.
+          </p>
+          <p><strong>06/10/2017</strong><br /> - New physics system that should handle really more objects at the same time.<br /> - Added skins, to choose between for.<br /> - Changed water, added some animations, show map when first entrance to game, changed
+            water movement and some movement and speed tweaking.
+          </p>
+          <p><strong>21/08/2017</strong><br /> - Performance improvements<br /> - Animals update<br /> - Added venom and venom sword. makes damage over time<br /> - Now you see when someone attacks<br /> - Build blocks are now stronger.<br /> - Swords makes
+            more damage<br /> - Throwing stones makes a bit less damage<br /> - Now you drop all your items when died
+          </p>
+          <p><strong>30/07/2017</strong><br /> - Fix bug using items not in inventory<br /> - Gold is now throwable<br /> - Throw items to allies for give it to them.
+          </p>
+          <p><strong>26/07/2017</strong><br /> - Added small potion<br /> - Added big potion<br /> - Fixed many bugs and exploits<br /> - Made map smaller and less players playing.<br /> - Changes to improve performance</p>
+
+          <p><strong>21/06/2017</strong><br /> - Physics optimized, now can handle many more objects.<br /> - Bugs about passthrough buildings, projectiles not colliding with targets should be repaired
+          </p>
+          <p><strong>19/06/2017</strong><br /> -speed optimizations
+          </p>
+          <p><strong>19/06/2017</strong><br /> -Palm tree added<br /> - Destroying build blocks, returns the cost divided by 3
+          </p>
+          <p><strong>15/06/2017</strong><br /> - Inventory system<br /> - Start without sword<br /> - Better Ui <br /> - Craft menú ( Craft will not be immediate like now )<br /> - Optimizations<br /> - New items:<br /> Helmets, pants, stone block, stone
+            door, swords, pickaxe, axe..<br /> - All items gathered are throwable, even coins. Coins are the weakest and stones the stronger.<br /> - Full heal advise (By someguy_someplace)
+          </p>
+          <p><strong>10/06/2017</strong><br /> - New update, Servers should be faster now, trying to remove all lag that cause other bugs<br /> - Movement tweaked, projectiles are a bit bigger
+          </p>
+          <p><strong>08/06/2017</strong><br /> - More users per server, some minor optimizations, bigger map.
+
+          </p>
+          <p><strong>31/05/2017</strong><br /> - Projectiles now are more realistic, grid build system, changes over map, more bigger map, repaired some crashes and making a more robust server.
+          </p>
+          <p><strong>26/05/2017</strong><br /> - Added alliances, added chat, changed the ui a bit, added some improvements
+          </p>
+          <p><strong>23/05/2017</strong><br /> - Limited users by ip, to avoid bots.
+          </p>
+          <p><strong>22/05/2017</strong><br /> - Bigger map<br /> - More items on map<br /> - Tweaked movement and collision system<br /> - More damage and slowed down heal<br /> - More repulsive force when attacked<br /> - Projectiles are now faster, you
+            can also chose the velocity with mouse(editado)
+          </p>
+          <p><strong>18/05/2017</strong><br /> - Names not showing fixed
+          </p>
+          <p><strong>18/05/2017</strong><br /> - Fixed a bug causing servers crash.<br /> - Now you can see the weapon of others, and their orientation<br /> - You can shot throught your own doors
+          </p>
+          <p><strong>17/05/2017</strong><br /> -Optimized collision system, you can construct now in water, movement should be better, network optimizations, client optimizations, removed rotation of players
+          </p>
+          <p><strong>16/05/2017</strong><br /> -New server selector. Coins dissapear elapsed some time
+          </p>
+
+          <p>Select between multiple and crazy skins.</p>
+          <p>Different animals like snakes, mouse, cow...</p>
+
+          <h2>Game objects library</h2>
+          <ul>
+            <li>
+              <h3>Wood Sword</h3>
+              <p>High damage weapon</p>
+            </li>
+            <li>
+              <h3>Stone Sword</h3>
+              <p>High damage weapon</p>
+            </li>
+            <li>
+              <h3>Venom Sword</h3>
+              <p>High damage weapon, poison your enemys.</p>
+            </li>
+            <li>
+              <h3>Gold Sword</h3>
+              <p>High damage weapon</p>
+            </li>
+            <li>
+              <h3>Axe</h3>
+              <p>Gather wood faster</p>
+            </li>
+            <li>
+              <h3>pickaxe</h3>
+              <p>Gather rocks faster</p>
+
+            </li>
+            <li>
+              <h3>Wood Helmet</h3>
+              <p>Mind is everything</p>
+
+            </li>
+            <li>
+              <h3>Wood Pants</h3>
+              <p>Protect your nuts</p>
+
+            </li>
+            <li>
+              <h3>Stone Helmet</h3>
+              <p>Mind is everything</p>
+
+            </li>
+            <li>
+              <h3>Stone Pants</h3>
+              <p>Protect your nuts</p>
+
+            </li>
+            <li>
+              <h3>Gold Helmet</h3>
+              <p>Mind is everything <br>( Although gold is not bad )</p>
+
+            </li>
+            <li>
+              <h3>Gold Pants</h3>
+              <p>Protect your nuts <br> Give gold per second</p>
+            </li>
+            <li>
+              <h3>Candle</h3>
+              <p>Light up your base and get animals away</p>
+            </li>
+            <li>
+              <h3>Campfire</h3>
+              <p>Light up your base and get animals away, can only be placed on ground.</p>
+            </li>
+            <li>
+              <h3>Wood Block</h3>
+              <p>Weak</p>
+            </li>
+            <li>
+              <h3>Stone Block</h3>
+              <p>Stronger</p>
+
+            </li>
+            <li>
+              <h3>Stones door</h3>
+              <p>Can pass and shot through</p>
+
+            </li>
+            <li>
+              <h3>Gold block</h3>
+              <p>Weak, gives gold per second</p>
+            </li>
+            <li>
+              <h3>Small Potion</h3>
+              <p>Heal yourself faster</p>
+
+            </li>
+            <li>
+              <h3>Big Potion</h3>
+              <p>Heal yourself faster</p>
+
+            </li>
+          </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>-->
+      </div>
+
+
+    </div>
+    <div class="bottom-left">
+      <div class="volume-menu">
+        <button class="open-volume-menu fa fa-volume-up"></button>
+      </div>
+      <a href="https://www.devclied.com/" target="_blank"><img src="public/img/devclied.png" width="172"></a>
+    </div>
+
+
+    <div id="privacy">
+      <p><a href="http://iogames.space/" target="_blank">More .io games</a> | <a href="https://www.devclied.com/privacy" target="_blank">Privacy</a> | <a href="https://discord.gg/e7kxrZz" target="_blank">Discord</a> | <a href="https://www.krew.io/" target="_blank">Krew.io</a>        | <a href="https://relmz.io" target="_blank">Relmz.io</a></p>
+    </div>
+  </div>
+  <div id="message">
+    ERROR CONNECTING WITH SERVER.
+  </div>
+
+  <div id="preroll"></div>
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105351798-46"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-105351798-46');
+  </script>
+  
+  <div class="loading">
+    <p>Loading...</p>
+  </div>
+
+
+<i style="position:absolute;top:0;left:0;overflow:hidden;width:0px;height:0px;" class="fa fa-times" aria-hidden="true"></i>
+<script>
+  hosts = {}
+</script>
+
+
+</body></html>
